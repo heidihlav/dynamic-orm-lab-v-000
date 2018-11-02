@@ -61,12 +61,6 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.flatten[0].to_s} = #{values_from_attr}"
     DB[:conn].execute(sql)
     #{attr.keys} - Keys are column names, and values are items in row.
-    #___________#
-    #Heidi Hlavinka 6 MINUTES AGO
-    #Ok. So, #{attr.keys.first.to_s} seemed to have worked. But now I'm grabbing an extra student hash.
-    #Aysan Isayo 4 MINUTES AGO
-    #got you, so we want to flatten the hash to grab the first element
-    #Aysan Isayo 4 MINUTES AGO
     #{hash.keys.flatten[0].to_s}
     end
 
