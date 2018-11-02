@@ -58,8 +58,13 @@ class InteractiveRecord
     #convert integer to string - maybe if/else statement
     values = attr.values.flatten[0]
     values_from_attr = Integer ? "'#{values}'" : "'#{values}'"
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.flatten[0].to_s} = #{values_from_attr}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.flatten[0].to_s} = #{attr.values.flatten[0].to_i}"
     DB[:conn].execute(sql)
+
+    # values = attr.values.flatten[0]
+    # values_from_attr = Integer ? "'#{values}'" : "'#{values}'"
+    # sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.flatten[0].to_s} = #{values_from_attr}"
+    # DB[:conn].execute(sql)
     # binding.pry
     #{attr.keys} - Keys are column names, and values are items in row.
     #___________#
