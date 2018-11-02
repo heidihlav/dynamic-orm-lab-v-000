@@ -129,7 +129,5 @@ class InteractiveRecord
     #{hash.keys.flatten[0].to_s}
     end
 
-  end
-
 
 end
