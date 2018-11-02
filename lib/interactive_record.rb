@@ -56,8 +56,8 @@ class InteractiveRecord
 
   def self.find_by(attr)
     #convert integer to string - maybe if/else statement
-    values = attr.values.flatten[0]
-    values_from_attr = Integer ? "'#{values}'" : "'#{values}'"
+    # values = attr.values.flatten[0]
+    # values_from_attr = Integer ? "'#{values}'" : "'#{values}'"
     sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.flatten[0].to_s} = #{attr.values.flatten[0].to_i}"
     DB[:conn].execute(sql)
 
